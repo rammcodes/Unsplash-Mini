@@ -70,6 +70,10 @@ class App extends React.Component {
   }
 
   onSearch = () => {
+    if (this.state.searchTerm === this.state.finalSearchTerm) {
+      return null
+    }
+
     this.setState({
       finalSearchTerm: this.state.searchTerm,
       currPage: 1,
@@ -130,4 +134,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App
