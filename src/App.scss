@@ -45,12 +45,34 @@
       }
     }
   }
+
+  .main-loader-cont {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .no-res-cont {
+    img {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      max-width: 500px;
+      transform: translate(-50%, -50%);
+    }
+  }
   .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 200px auto 100px auto;
     .img-cont {
       position: relative;
       img {
         cursor: pointer;
         display: block;
+        width: 100%;
       }
       .img-ovr {
         display: none;
@@ -84,6 +106,10 @@
       font-weight: bold;
       cursor: pointer;
       border-radius: 50px;
+    }
+    h5 {
+      font-size: 2rem;
+      color: grey;
     }
   }
 }

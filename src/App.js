@@ -124,42 +124,23 @@ class App extends React.Component {
         </header>
 
         {this.state.items === null ? (
-          <div className="">Loading...</div>
+          <div className="main-loader-cont">
+            <Loader type="Oval" color="grey" height={50} width={50} />
+          </div>
         ) : !this.state.items.length ? (
           <div className="no-res-cont">
-            <img
-              style={{
-                position: 'fixed',
-                top: '50%',
-                left: '50%',
-                maxWidth: '500px',
-                transform: 'translate(-50%,-50%)',
-              }}
-              src={require('./assets/no-res.png')}
-              alt="no-result"
-            />
+            <img src={require('./assets/no-res.png')} alt="no-result" />
           </div>
         ) : (
           <>
-            <div
-              style={{
-                width: '90%',
-                maxWidth: '1200px',
-                margin: ' 200px auto 100px auto',
-              }}
-              className="container"
-            >
+            <div className="container">
               <ResponsiveMasonry
                 columnsCountBreakPoints={{ 200: 1, 480: 2, 900: 3 }}
               >
                 <Masonry gutter="20px">
                   {this.state.items.map((item, idx) => (
                     <div key={idx} className="img-cont">
-                      <img
-                        style={{ width: '100%' }}
-                        src={item.urls.regular}
-                        alt="img"
-                      />
+                      <img src={item.urls.regular} alt="img" />
                       <div className="img-ovr">.</div>
                     </div>
                   ))}
@@ -173,7 +154,7 @@ class App extends React.Component {
                 this.state.currPage < this.state.totalPages ? (
                   <button onClick={this.onPageCountInc}>Load More</button>
                 ) : (
-                  <h5 style={{ fontSize: '2rem', color: 'grey' }}>End</h5>
+                  <h5>End of Results!</h5>
                 )
               ) : (
                 <button onClick={this.onPageCountInc}>Load More</button>
