@@ -87,3 +87,20 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .app .topbar {
+    padding: 20px 0;
+  }
+
+  .app .container {
+    margin: 150px auto 50px auto !important;
+  }
+
+  .app .topbar .search-cont .search {
+    width: 80%;
+  }
+  .app .topbar .search-cont button {
+    width: 20%;
+  }
+}

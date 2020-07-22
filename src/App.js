@@ -132,7 +132,7 @@ class App extends React.Component {
                 position: 'fixed',
                 top: '50%',
                 left: '50%',
-                width: '500px',
+                maxWidth: '500px',
                 transform: 'translate(-50%,-50%)',
               }}
               src={require('./assets/no-res.png')}
@@ -173,7 +173,7 @@ class App extends React.Component {
                 this.state.currPage < this.state.totalPages ? (
                   <button onClick={this.onPageCountInc}>Load More</button>
                 ) : (
-                  <h5>End</h5>
+                  <h5 style={{ fontSize: '2rem', color: 'grey' }}>End</h5>
                 )
               ) : (
                 <button onClick={this.onPageCountInc}>Load More</button>
