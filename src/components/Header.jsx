@@ -4,7 +4,13 @@ import Loader from 'react-loader-spinner'
 const Header = (props) => {
   return (
     <header className="topbar">
-      <div className="search-cont">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          props.onSearch()
+        }}
+        className="search-cont"
+      >
         <input
           placeholder="Search for images..."
           type="text"
@@ -21,7 +27,7 @@ const Header = (props) => {
             <img src={require('../assets/search-1.png')} alt="search" />
           </button>
         )}
-      </div>
+      </form>
     </header>
   )
 }
