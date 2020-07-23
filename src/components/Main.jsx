@@ -10,8 +10,17 @@ const Main = (props) => {
           <Masonry gutter="20px">
             {props.items.map((item, idx) => (
               <div key={idx} className="img-cont">
-                <img src={item.urls.regular} alt="img" />
-                <div className="img-ovr">.</div>
+                <img
+                  data-src="https://ik.imagekit.io/demo/default-image.jpg"
+                  src={item.urls.regular}
+                  alt="img"
+                />
+                <div
+                  onClick={() => props.setFullScreenImage(item.urls.regular)}
+                  className="img-ovr"
+                >
+                  .
+                </div>
               </div>
             ))}
           </Masonry>

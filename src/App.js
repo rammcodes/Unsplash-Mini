@@ -17,6 +17,7 @@ class App extends React.Component {
     searchTerm: '',
     finalSearchTerm: '',
     totalPages: null,
+    fullScreenImg: null,
   }
 
   componentDidMount() {
@@ -83,6 +84,19 @@ class App extends React.Component {
     })
   }
 
+  setFullScreenImage = (url) => {
+    this.setState({
+      fullScreenImg: url,
+    })
+  }
+
+  UnsetFullScreenImage = (e) => {
+    console.log('by', e)
+    this.setState({
+      fullScreenImg: null,
+    })
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (
       prevState.currPage !== this.state.currPage ||
@@ -110,6 +124,11 @@ class App extends React.Component {
           searchLoader={this.state.searchLoader}
           onSearch={this.onSearch}
         />
+        {this.state.fullScreenImg ? (
+          <div onClick={this.UnsetFullScreenImage} className="full-img">
+            <img src={this.state.fullScreenImg} alt="fullImage" />
+          </div>
+        ) : null}
 
         {this.state.items === null ? (
           <div className="main-loader-cont">
@@ -127,6 +146,7 @@ class App extends React.Component {
             currPage={this.state.currPage}
             totalPages={this.state.totalPages}
             onPageCountInc={this.onPageCountInc}
+            setFullScreenImage={this.setFullScreenImage}
           />
         )}
       </div>
