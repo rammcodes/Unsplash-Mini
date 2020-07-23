@@ -91,7 +91,6 @@ class App extends React.Component {
   }
 
   UnsetFullScreenImage = (e) => {
-    console.log('by', e)
     this.setState({
       fullScreenImg: null,
     })
