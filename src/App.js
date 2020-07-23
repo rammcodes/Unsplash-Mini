@@ -11,7 +11,7 @@ class App extends React.Component {
   state = {
     items: null,
     currPage: 1,
-    perPage: 10,
+    perPage: 25,
     pagLoader: false,
     searchLoader: false,
     searchTerm: '',
